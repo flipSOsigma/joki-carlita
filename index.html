@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMPN 5 Kota Semarang</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .hero-bg {
+                background-image: url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg');
+            }
+            .bg-blue-light {
+                background-color: rgba(105, 188, 255, 0.4);
+            }
+            .text-primary {
+                color: #008CFF;
+            }
+            .bg-primary {
+                background-color: #008CFF;
+            }
+            .text-secondary {
+                color: #69BCFF;
+            }
+            .bg-secondary {
+                background-color: #69BCFF;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center w-full">
+                    <a href="#" class="text-2xl font-bold text-primary" id="schoolShortName">SMPN5<span class="text-secondary">Semarang</span></a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <ion-icon name="menu" class="text-2xl"></ion-icon>
+                    </button>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex justify-center space-x-8 w-full">
+                    <a href="#" class="text-primary font-medium">Beranda</a>
+                    <a href="#sambutan" class="text-gray-700 hover:text-primary font-medium">Sambutan</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">Tentang Kami</a>
+                    <a href="#news" class="text-gray-700 hover:text-primary font-medium">Berita</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Kontak</a>
+                </div>
+
+                <div class="w-full flex justify-end">
+                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-full px-10 hover:bg-secondary">Login</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Beranda</a>
+                <a href="#sambutan" class="block py-2 text-gray-700 hover:text-primary">Sambutan</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-primary">Tentang Kami</a>
+                <a href="#news" class="block py-2 text-gray-700 hover:text-primary">Berita</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary">Kontak</a>
+                <a href="#" class="block mt-2 bg-primary text-white px-4 py-2 rounded-md text-center">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-black py-20 md:py-40 px-4 md:px-40">
+        <div class="flex flex-col justify-end items-center text-center">
+            <h1 class="text-2xl max-w-5xl md:text-4xl font-bold mb-4" id="heroTitle">Loading...</h1>
+            <p class="text-base mb-8 max-w-3xl mx-auto" id="heroSubtitle">Loading...</p>
+            <div class="flex gap-2">
+                <a href="#contact" class="bg-primary border border-primary hover:text-black hover:bg-white text-white py-2 px-10 rounded-full transition duration-300">Daftar Sekarang</a>
+                <a href="#about" class="bg-white border border-primary text-black hover:bg-primary hover:text-white py-2 px-10 rounded-full transition duration-300">Tentang Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-blue-light py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="statsContainer">
+                <!-- Stats will be loaded here from JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sambutan Section -->
+    <section id="sambutan" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-black mb-4">Sambutan Kepala Sekolah</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="bg-gray-200 rounded-md w-48 h-48 md:w-64 md:h-64 overflow-hidden">
+                        <img id="principalImage" src="" alt="Kepala Sekolah" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2" id="principalName">Loading...</h3>
+                    <p class="text-gray-600 mb-16 border-l-8 border-l-secondary pl-4" id="principalNip">Loading...</p>
+                    <p class="text-gray-700 mb-4" id="principalGreeting">Loading...</p>
+                    <p class="text-gray-700 mb-6" id="principalMessage">Loading...</p>
+                    <a href="#" class="text-secondary hover:text-primary font-medium">Baca selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20 flex flex-col gap-4">
+                <h2 class="text-3xl font-bold text-black">Berita SMP Negeri 5 Kota Semarang</h2>
+                <p>cuplikan berita terkini dari SMP Negeri 5 Kota Semarang</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="newsContainer">
+                <!-- News items will be loaded here from JSON -->
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-primary text-white hover:bg-secondary py-2 px-10 rounded-full transition duration-300">Lihat Berita Lainnya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 flex flex-col gap-4">
+                <h2 class="text-3xl font-bold" id="aboutTitle">Loading...</h2>
+                <p id="aboutSubtitle">Loading...</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Visi -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4" id="visionTitle">Loading...</h3>
+                    <p class="text-gray-700 mb-4" id="visionContent">Loading...</p>
+                    <a href="#" class="text-secondary hover:text-primary font-medium">Baca selengkapnya</a>
+                </div>
+                
+                <!-- Misi -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4" id="missionTitle">Loading...</h3>
+                    <p class="text-gray-700 mb-4" id="missionContent">Loading...</p>
+                    <a href="#" class="text-secondary hover:text-primary font-medium">Baca selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <img src="images/Wave Bg.png" class="w-full" alt="">
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex flex-col gap-4">Terhubung dengan SMP Negeri 5 Kota Semarang</h2>
+                <p class="max-w-2xl mx-auto">Kirimkan kami pesan email atau terhubung dengan kami melalui kontak berikut:</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <div class="flex items-start flex-1 justify-center">
+                    <div class="h-full flex items-center justify-center aspect-square bg-white text-primary p-3 rounded-full mr-4">
+                        <ion-icon name="mail"></ion-icon>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-2xl">Email</h4>
+                        <a href="#" id="schoolEmail" class="hover:underline">Loading...</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-start flex-1 justify-center">
+                    <div class="h-full flex items-center justify-center aspect-square bg-white text-primary p-3 rounded-full mr-4">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-2xl">Instagram</h4>
+                        <a href="#" id="schoolInstagram" class="hover:underline">Loading...</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-start flex-1 justify-center">
+                    <div class="h-full flex items-center justify-center aspect-square bg-white text-primary p-3 rounded-full mr-4">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-2xl">WhatsApp</h4>
+                        <a href="#" id="schoolWhatsapp" class="hover:underline">Loading...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4" id="footerSchoolName">Loading...</h3>
+                    <p class="text-gray-400" id="schoolMotto">Loading...</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Menu Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Beranda</a></li>
+                        <li><a href="#sambutan" class="text-gray-400 hover:text-white">Sambutan</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#news" class="text-gray-400 hover:text-white">Berita</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Additional Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Lainnya</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Data Siswa</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Data Prestasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Data Guru</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Perpustakaan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Program Lain</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Media Sosial</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" id="footerInstagram" class="bg-gray-700 hover:bg-primary text-white p-3 rounded-full h-full aspect-square">
+                            <ion-icon class="h-full aspect-square" name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="#" id="footerWhatsapp" class="bg-gray-700 hover:bg-primary text-white p-3 rounded-full h-full aspect-square">
+                            <ion-icon class="h-full aspect-square" name="logo-whatsapp"></ion-icon>
+                        </a>
+                        <a href="#" id="footerEmail" class="bg-gray-700 hover:bg-primary text-white p-3 rounded-full h-full aspect-square">
+                            <ion-icon class="h-full aspect-square" name="mail"></ion-icon>
+                        </a>
+                    </div>
+                    <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-md">Login</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="currentYear"></span> <span id="footerFullSchoolName">Loading...</span>. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Load JSON data and populate the page
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // School Info
+                document.getElementById('schoolShortName').innerHTML = `${data.school.shortName.split(' ')[0]}<span class="text-secondary">${data.school.shortName.split(' ')[1]}</span>`;
+                document.getElementById('footerSchoolName').textContent = data.school.shortName;
+                document.getElementById('footerFullSchoolName').textContent = data.school.name;
+                document.getElementById('schoolMotto').textContent = data.school.motto;
+                
+                // Contact Info
+                document.getElementById('schoolEmail').textContent = data.school.email;
+                document.getElementById('schoolEmail').href = `mailto:${data.school.email}`;
+                document.getElementById('schoolInstagram').textContent = data.school.instagram.split('/').pop();
+                document.getElementById('schoolInstagram').href = data.school.instagram;
+                document.getElementById('schoolWhatsapp').textContent = data.school.whatsapp.split('/').pop().replace(/(\d{4})(\d{4})(\d{4})(\d{2})/, '$1 $2 $3 $4');
+                document.getElementById('schoolWhatsapp').href = data.school.whatsapp;
+                
+                // Footer contact links
+                document.getElementById('footerInstagram').href = data.school.instagram;
+                document.getElementById('footerWhatsapp').href = data.school.whatsapp;
+                document.getElementById('footerEmail').href = `mailto:${data.school.email}`;
+                
+                // Hero Section
+                document.getElementById('heroTitle').textContent = data.hero.title;
+                document.getElementById('heroSubtitle').textContent = data.hero.subtitle;
+                
+                // Principal Section
+                document.getElementById('principalName').textContent = data.principal.name;
+                document.getElementById('principalNip').textContent = data.principal.nip;
+                document.getElementById('principalGreeting').textContent = data.principal.greeting;
+                document.getElementById('principalMessage').textContent = data.principal.message;
+                document.getElementById('principalImage').src = data.principal.image;
+                document.getElementById('principalImage').alt = data.principal.name;
+                
+                // About Section
+                document.getElementById('aboutTitle').textContent = data.about.title;
+                document.getElementById('aboutSubtitle').textContent = data.about.subtitle;
+                document.getElementById('visionTitle').textContent = data.about.vision.title;
+                document.getElementById('visionContent').textContent = data.about.vision.content;
+                document.getElementById('missionTitle').textContent = data.about.mission.title;
+                document.getElementById('missionContent').textContent = data.about.mission.content;
+                
+                // Stats Section
+                const statsContainer = document.getElementById('statsContainer');
+                data.stats.forEach(stat => {
+                    statsContainer.innerHTML += `
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <h3 class="text-4xl font-bold text-primary mb-2">${stat.value}</h3>
+                            <p class="text-gray-600">${stat.label}</p>
+                            <a href="${stat.link}" class="text-secondary hover:text-primary mt-4 inline-block">Baca selengkapnya →</a>
+                        </div>
+                    `;
+                });
+                
+                // News Section
+                const newsContainer = document.getElementById('newsContainer');
+                data.news.forEach(newsItem => {
+                    newsContainer.innerHTML += `
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="h-48 bg-gray-300 flex items-center justify-center">
+                                <img src="${newsItem.image}" alt="${newsItem.title}" class="object-cover w-full h-full">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-sm bg-primary text-white px-5 rounded-full py-1 text-xs">${newsItem.category}</span>
+                                <h3 class="text-xl font-bold text-gray-800 my-2">${newsItem.title}</h3>
+                                <p class="text-gray-600 mb-4">${newsItem.excerpt}</p>
+                                <a href="${newsItem.link}" class="text-secondary hover:text-primary font-medium">Baca selengkapnya</a>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Set current year in footer
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+            })
+            .catch(error => {
+                console.error('Error loading JSON data:', error);
+                // You could add fallback content here if the JSON fails to load
+            });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
