@@ -1,0 +1,17 @@
+.active-nav-link {
+    background-color: #1e40af;
+    color: white;
+}
+.ck-editor__editable {
+    min-height: 200px;
+}
+
+@media (max-width: 768px) {
+    .flex.flex-col.md\:flex-row {
+        flex-direction: column;
+    }
+    
+    .w-64 {
+        width: 100%;
+    }
+}

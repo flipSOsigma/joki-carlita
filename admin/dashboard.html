@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SMPN 5 Semarang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#008CFF',
+                        secondary: '#69BCFF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center w-full">
+                    <a href="../index.html" class="text-2xl font-bold text-primary">SMPN5<span class="text-secondary">Semarang</span></a>
+                </div>
+                
+                <div class="w-full flex justify-end">
+                    <button id="logoutBtn" class="text-primary hover:text-secondary font-medium flex items-center">
+                        <ion-icon name="log-out-outline" class="mr-2"></ion-icon> Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 bg-white rounded-lg shadow-md p-4 h-fit sticky top-20">
+                <h2 class="text-xl font-bold text-primary mb-4">Menu Admin</h2>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" data-section="dashboard" class="block p-2 rounded hover:bg-primary/10 text-primary font-medium active-admin-link">
+                            <ion-icon name="speedometer-outline" class="mr-2"></ion-icon> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="hero" class="block p-2 rounded hover:bg-primary/10">
+                            <ion-icon name="home-outline" class="mr-2"></ion-icon> Hero Section
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="principal" class="block p-2 rounded hover:bg-primary/10">
+                            <ion-icon name="person-outline" class="mr-2"></ion-icon> Kepala Sekolah
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="stats" class="block p-2 rounded hover:bg-primary/10">
+                            <ion-icon name="stats-chart-outline" class="mr-2"></ion-icon> Statistik
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="news" class="block p-2 rounded hover:bg-primary/10">
+                            <ion-icon name="newspaper-outline" class="mr-2"></ion-icon> Berita
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="about" class="block p-2 rounded hover:bg-primary/10">
+                            <ion-icon name="information-circle-outline" class="mr-2"></ion-icon> Tentang Sekolah
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="contact" class="block p-2 rounded hover:bg-primary/10">
+                            <ion-icon name="mail-outline" class="mr-2"></ion-icon> Kontak
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="download" class="block p-2 rounded hover:bg-primary/10">
+                            <ion-icon name="download-outline" class="mr-2"></ion-icon> Download Data
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="flex-1 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-primary mb-6" id="adminSectionTitle">Dashboard</h2>
+                <div id="adminContent">
+                    <div class="text-center py-10">
+                        <ion-icon name="speedometer-outline" class="text-5xl text-primary mb-4"></ion-icon>
+                        <h3 class="text-2xl font-bold mb-2">Selamat Datang di Admin Panel</h3>
+                        <p class="text-gray-600">Pilih menu di sidebar untuk mengelola konten website</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

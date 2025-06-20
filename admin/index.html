@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - SMPN 5 Semarang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#008CFF',
+                        secondary: '#69BCFF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center w-full">
+                    <a href="../index.html" class="text-2xl font-bold text-primary">SMPN5<span class="text-secondary">Semarang</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-20 md:py-40 px-4 md:px-40 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')]">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-primary mb-2">Admin Panel</h1>
+                <p class="text-gray-600">Silakan login untuk mengelola konten website</p>
+            </div>
+            
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="username" class="block text-gray-700 mb-2">Username</label>
+                    <input type="text" id="username" required 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-gray-700 mb-2">Password</label>
+                    <input type="password" id="password" required 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-primary text-white py-2 px-4 rounded-full hover:bg-secondary transition duration-300 mt-6">
+                    Login
+                </button>
+            </form>
+            
+            <div id="errorMessage" class="mt-4 text-red-500 text-center hidden"></div>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+</body>
+</html>
