@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Drs. Nanang Sungkowo",
+        "nip": "19661006 199412 1 001",
+        "subject": "Mathematics",
+        "email": "nanang@smpn5.example",
+        "phone": "081234567890",
+        "image": "images/teachers/nanang.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Siti Aminah, S.Pd",
+        "nip": "19751203 200112 2 002",
+        "subject": "Bahasa Indonesia",
+        "email": "siti@smpn5.example",
+        "phone": "082345678901",
+        "image": "images/teachers/siti.jpg"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Juara 1 Olimpiade Matematika",
+        "student_id": 1,
+        "student_name": "Andi Setiawan",
+        "competition": "Olimpiade Matematika Tingkat Kota",
+        "date": "2023-03-10",
+        "level": "Kota",
+        "description": "Memenangkan olimpiade matematika tingkat kota"
+    },
+    {
+        "id": 2,
+        "title": "Juara 2 Lomba Pidato",
+        "student_id": 2,
+        "student_name": "Budi Santoso",
+        "competition": "Lomba Pidato Bahasa Inggris",
+        "date": "2023-04-15",
+        "level": "Provinsi",
+        "description": "Mendapatkan juara 2 lomba pidato bahasa Inggris tingkat provinsi"
+    }
+]

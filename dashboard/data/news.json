@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "SMP N 5 Mendapat Akreditasi...",
+        "category": "Berita Acara",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image": "images\/Thumbnail_Berita.png",
+        "link": "#",
+        "date": "2023-05-15",
+        "author": "Admin"
+    },
+    {
+        "id": 2,
+        "title": "Pramuka Asique dan Menyena...",
+        "category": "Berita Acara",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image": "images\/Thumbnail_Berita.png",
+        "link": "#",
+        "date": "2023-05-10",
+        "author": "Admin"
+    },
+    {
+        "id": 3,
+        "title": "Test news",
+        "category": "berita sekolah",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum leo eu aliquet pretium. Lorem ipsum dolor sit amet consectetur adipisicing elit. In, a.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum leo eu aliquet pretium. Lorem ipsum dolor sit amet consectetur adipisicing elit. In, a.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum leo eu aliquet pretium. Lorem ipsum dolor sit amet consectetur adipisicing elit. In, a.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum leo eu aliquet pretium. Lorem ipsum dolor sit amet consectetur adipisicing elit. In, a.",
+        "image": "image\/Thumbnail Berita.png",
+        "link": "",
+        "date": "2025-06-24",
+        "author": "admin"
+    },
+    {
+        "id": 4,
+        "title": "Test News 2",
+        "category": "bertia",
+        "excerpt": "Thumbnail Berita",
+        "image": "images\/Thumbnail Berita.png",
+        "link": "",
+        "date": "2025-06-24",
+        "author": "admin"
+    }
+]

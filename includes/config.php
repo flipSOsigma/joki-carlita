@@ -6,10 +6,6 @@ define('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/admin/');
 
 session_start();
 
-if (!file_exists(UPLOAD_DIR)) {
-    mkdir(UPLOAD_DIR, 0755, true);
-}
-
 function loadContent() {
     if (!file_exists(CONTENT_FILE)) {
         file_put_contents(CONTENT_FILE, json_encode([]));

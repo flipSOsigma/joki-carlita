@@ -264,99 +264,197 @@
     </footer>
 
     <script>
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('schoolShortName').innerHTML = `${data.school.shortName.split(' ')[0]}<span class="text-secondary">${data.school.shortName.split(' ')[1]}</span>`;
-                document.getElementById('footerSchoolName').textContent = data.school.shortName;
-                document.getElementById('footerFullSchoolName').textContent = data.school.name;
-                document.getElementById('schoolMotto').textContent = data.school.motto;
-                
-                document.getElementById('schoolEmail').textContent = data.school.email;
-                document.getElementById('schoolEmail').href = `mailto:${data.school.email}`;
-                document.getElementById('schoolInstagram').textContent = data.school.instagram.split('/').pop();
-                document.getElementById('schoolInstagram').href = data.school.instagram;
-                document.getElementById('schoolWhatsapp').textContent = data.school.whatsapp.split('/').pop().replace(/(\d{4})(\d{4})(\d{4})(\d{2})/, '$1 $2 $3 $4');
-                document.getElementById('schoolWhatsapp').href = data.school.whatsapp;
-                
-                document.getElementById('footerInstagram').href = data.school.instagram;
-                document.getElementById('footerWhatsapp').href = data.school.whatsapp;
-                document.getElementById('footerEmail').href = `mailto:${data.school.email}`;
-                
-                document.getElementById('heroTitle').textContent = data.hero.title;
-                document.getElementById('heroSubtitle').textContent = data.hero.subtitle;
-                
-                document.getElementById('principalName').textContent = data.principal.name;
-                document.getElementById('principalNip').textContent = data.principal.nip;
-                document.getElementById('principalGreeting').textContent = data.principal.greeting;
-                document.getElementById('principalMessage').textContent = data.principal.message;
-                document.getElementById('principalImage').src = data.principal.image;
-                document.getElementById('principalImage').alt = data.principal.name;
-                
-                document.getElementById('aboutTitle').textContent = data.about.title;
-                document.getElementById('aboutSubtitle').textContent = data.about.subtitle;
-                document.getElementById('visionTitle').textContent = data.about.vision.title;
-                document.getElementById('visionContent').textContent = data.about.vision.content;
-                document.getElementById('missionTitle').textContent = data.about.mission.title;
-                document.getElementById('missionContent').textContent = data.about.mission.content;
-                const statsContainer = document.getElementById('statsContainer');
-                data.stats.forEach(stat => {
-                    statsContainer.innerHTML += `
-                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                            <h3 class="text-4xl font-bold text-primary mb-2">${stat.value}</h3>
-                            <p class="text-gray-600">${stat.label}</p>
-                            <a href="${stat.link}" class="text-secondary hover:text-primary mt-4 inline-block">Baca selengkapnya →</a>
-                        </div>
-                    `;
+    // Load multiple JSON files
+    async function loadData() {
+        try {
+            // Load all JSON files in parallel
+            const [contentData, newsData, statsData] = await Promise.all([
+                fetch('dashboard/data/content.json').then(res => res.json()),
+                fetch('dashboard/data/news.json').then(res => res.json()),
+                fetch('dashboard/data/achievements.json').then(res => res.json())
+            ]);
+
+            // School Info
+            document.getElementById('schoolShortName').innerHTML = `${contentData.school.shortName.split(' ')[0]}<span class="text-secondary">${contentData.school.shortName.split(' ')[1]}</span>`;
+            document.getElementById('footerSchoolName').textContent = contentData.school.shortName;
+            document.getElementById('footerFullSchoolName').textContent = contentData.school.name;
+            document.getElementById('schoolMotto').textContent = contentData.school.motto;
+            
+            // Contact Info
+            document.getElementById('schoolEmail').textContent = contentData.school.email;
+            document.getElementById('schoolEmail').href = `mailto:${contentData.school.email}`;
+            document.getElementById('schoolInstagram').textContent = contentData.school.instagram.split('/').pop();
+            document.getElementById('schoolInstagram').href = contentData.school.instagram;
+            document.getElementById('schoolWhatsapp').textContent = contentData.school.whatsapp.split('/').pop().replace(/(\d{4})(\d{4})(\d{4})(\d{2})/, '$1 $2 $3 $4');
+            document.getElementById('schoolWhatsapp').href = contentData.school.whatsapp;
+            
+            // Footer Social
+            document.getElementById('footerInstagram').href = contentData.school.instagram;
+            document.getElementById('footerWhatsapp').href = contentData.school.whatsapp;
+            document.getElementById('footerEmail').href = `mailto:${contentData.school.email}`;
+            
+            // Hero Section
+            document.getElementById('heroTitle').textContent = contentData.hero.title;
+            document.getElementById('heroSubtitle').textContent = contentData.hero.subtitle;
+            
+            // Principal Section
+            document.getElementById('principalName').textContent = contentData.principal.name;
+            document.getElementById('principalNip').textContent = contentData.principal.nip;
+            document.getElementById('principalGreeting').textContent = contentData.principal.greeting;
+            document.getElementById('principalMessage').textContent = contentData.principal.message;
+            document.getElementById('principalImage').src = contentData.principal.image;
+            document.getElementById('principalImage').alt = contentData.principal.name;
+            
+            // About Section
+            document.getElementById('aboutTitle').textContent = contentData.about.title;
+            document.getElementById('aboutSubtitle').textContent = contentData.about.subtitle;
+            document.getElementById('visionTitle').textContent = contentData.about.vision.title;
+            document.getElementById('visionContent').textContent = contentData.about.vision.content;
+            document.getElementById('missionTitle').textContent = contentData.about.mission.title;
+            document.getElementById('missionContent').textContent = contentData.about.mission.content;
+
+            // Stats Section (using achievements data)
+            const statsContainer = document.getElementById('statsContainer');
+            statsContainer.innerHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-2">${newsData.length}</h3>
+                    <p class="text-gray-600">Berita Terkini</p>
+                    <a href="#news" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-2">${statsData.length}</h3>
+                    <p class="text-gray-600">Prestasi Siswa</p>
+                    <a href="#" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-2">${contentData.stats[2].value}</h3>
+                    <p class="text-gray-600">${contentData.stats[2].label}</p>
+                    <a href="${contentData.stats[2].link}" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
+                </div>
+            `;
+            
+            // News Section (using news.json)
+            const newsContainer = document.getElementById('newsContainer');
+            newsContainer.innerHTML = '';
+            
+            // Show only the 4 most recent news items
+            const recentNews = newsData.slice(0, 4);
+            
+            recentNews.forEach(newsItem => {
+                const newsDate = new Date(newsItem.date);
+                const formattedDate = newsDate.toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
                 });
                 
-                const newsContainer = document.getElementById('newsContainer');
-                data.news.forEach(newsItem => {
-                    newsContainer.innerHTML += `
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="h-48 bg-gray-300 flex items-center justify-center">
-                                <img src="${newsItem.image}" alt="${newsItem.title}" class="object-cover w-full h-full">
-                            </div>
-                            <div class="p-6">
-                                <span class="text-sm bg-primary text-white px-5 rounded-full py-1 text-xs">${newsItem.category}</span>
-                                <h3 class="text-xl font-bold text-gray-800 my-2">${newsItem.title}</h3>
-                                <p class="text-gray-600 mb-4">${newsItem.excerpt}</p>
-                                <a href="${newsItem.link}" class="text-secondary hover:text-primary font-medium">Baca selengkapnya</a>
-                            </div>
+                newsContainer.innerHTML += `
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                        <div class="h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
+                            <img src="${newsItem.image}" alt="${newsItem.title}" class="object-cover w-full h-full hover:scale-105 transition duration-500">
                         </div>
-                    `;
-                });
-                document.getElementById('currentYear').textContent = new Date().getFullYear();
-            })
-            .catch(error => {
-                console.error('Error loading JSON data:', error);
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm bg-primary text-white px-3 py-1 rounded-full text-xs">${newsItem.category}</span>
+                                <span class="text-sm text-gray-500">${formattedDate}</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 my-2 line-clamp-2">${newsItem.title}</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">${newsItem.excerpt}</p>
+                            <a href="${newsItem.link}" class="text-secondary hover:text-primary font-medium flex items-center">
+                                Baca selengkapnya
+                                <ion-icon name="arrow-forward" class="ml-1"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                `;
             });
+            
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        } catch (error) {
+            console.error('Error loading data:', error);
+            // Fallback to original content.json if other files fail
+            fetch('dashboard/data/content.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Load basic data from content.json
+                    loadFallbackData(data);
+                })
+                .catch(err => {
+                    console.error('Error loading fallback data:', err);
+                });
+        }
+    }
 
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+    // Fallback function if new JSON files fail
+    function loadFallbackData(data) {
+        document.getElementById('schoolShortName').innerHTML = `${data.school.shortName.split(' ')[0]}<span class="text-secondary">${data.school.shortName.split(' ')[1]}</span>`;
+        document.getElementById('footerSchoolName').textContent = data.school.shortName;
+        document.getElementById('footerFullSchoolName').textContent = data.school.name;
+        document.getElementById('schoolMotto').textContent = data.school.motto;
+        
+        // Stats Section (fallback to original)
+        const statsContainer = document.getElementById('statsContainer');
+        statsContainer.innerHTML = '';
+        data.stats.forEach(stat => {
+            statsContainer.innerHTML += `
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-2">${stat.value}</h3>
+                    <p class="text-gray-600">${stat.label}</p>
+                    <a href="${stat.link}" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
+                </div>
+            `;
         });
+        
+        // News Section (fallback to original)
+        const newsContainer = document.getElementById('newsContainer');
+        newsContainer.innerHTML = '';
+        data.news.forEach(newsItem => {
+            newsContainer.innerHTML += `
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center">
+                        <img src="${newsItem.image}" alt="${newsItem.title}" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm bg-primary text-white px-5 rounded-full py-1 text-xs">${newsItem.category}</span>
+                        <h3 class="text-xl font-bold text-gray-800 my-2">${newsItem.title}</h3>
+                        <p class="text-gray-600 mb-4">${newsItem.excerpt}</p>
+                        <a href="${newsItem.link}" class="text-secondary hover:text-primary font-medium">Baca selengkapnya</a>
+                    </div>
+                </div>
+            `;
+        });
+    }
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+    // Initialize
+    loadData();
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
                 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
                 }
-            });
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>

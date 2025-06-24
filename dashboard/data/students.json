@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Andi Setiawan",
+        "nis": "20230001",
+        "class": "9A",
+        "birth_date": "2008-05-15",
+        "address": "Jl. Merdeka No. 10, Semarang"
+    },
+    {
+        "id": 2,
+        "name": "Budi Santoso",
+        "nis": "20230002",
+        "class": "9B",
+        "birth_date": "2008-07-22",
+        "address": "Jl. Pahlawan No. 5, Semarang"
+    }
+]
