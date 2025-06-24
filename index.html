@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="w-full flex justify-end">
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-full px-10 hover:bg-secondary">Login</a>
+                    <a href="dashboard/index.php" class="bg-primary text-white px-4 py-2 rounded-full px-10 hover:bg-secondary">Login</a>
                 </div>
             </div>
             
@@ -268,10 +268,12 @@
     async function loadData() {
         try {
             // Load all JSON files in parallel
-            const [contentData, newsData, statsData] = await Promise.all([
+            const [contentData, newsData, statsData, studentsData, teachersData] = await Promise.all([
                 fetch('dashboard/data/content.json').then(res => res.json()),
                 fetch('dashboard/data/news.json').then(res => res.json()),
-                fetch('dashboard/data/achievements.json').then(res => res.json())
+                fetch('dashboard/data/achievements.json').then(res => res.json()),
+                fetch('dashboard/data/students.json').then(res => res.json()),
+                fetch('dashboard/data/teachers.json').then(res => res.json())
             ]);
 
             // School Info
@@ -317,19 +319,19 @@
             const statsContainer = document.getElementById('statsContainer');
             statsContainer.innerHTML = `
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <h3 class="text-4xl font-bold text-primary mb-2">${newsData.length}</h3>
-                    <p class="text-gray-600">Berita Terkini</p>
-                    <a href="#news" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
+                    <h3 class="text-4xl font-bold text-primary mb-2">${studentsData.length}</h3>
+                    <p class="text-gray-600">Data Siswa</p>
+                    <a href="students.php" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
                     <h3 class="text-4xl font-bold text-primary mb-2">${statsData.length}</h3>
                     <p class="text-gray-600">Prestasi Siswa</p>
-                    <a href="#" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
+                    <a href="achievements.php" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <h3 class="text-4xl font-bold text-primary mb-2">${contentData.stats[2].value}</h3>
-                    <p class="text-gray-600">${contentData.stats[2].label}</p>
-                    <a href="${contentData.stats[2].link}" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
+                    <h3 class="text-4xl font-bold text-primary mb-2">${teachersData.length}</h3>
+                    <p class="text-gray-600">Data Guru</p>
+                    <a href="teachers.php" class="text-secondary hover:text-primary mt-4 inline-block">Lihat semua →</a>
                 </div>
             `;
             
