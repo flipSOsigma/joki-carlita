@@ -1,6 +1,6 @@
 {
     "school": {
-        "name": "SMPN 5 Semarang",
+        "name": "SMP Negeri 5 Semarang",
         "shortName": "SMPN5 Semarang",
         "address": "JL. Sultan Agung Nomor 09, Kota Semarang, Jawa Tengah",
         "email": "smpn5semarang@gmail.com",
@@ -9,7 +9,7 @@
         "motto": "Membentuk generasi unggul, berkarakter, dan berprestasi untuk masa depan yang gemilang."
     },
     "principal": {
-        "name": "Drs. Nanang Sungkowo",
+        "name": "Drs. Nanang Sungkowo STs",
         "nip": "19661006 199412 1 001",
         "greeting": "Assalamu 'alaikum wr. wb.",
         "message": "Puji syukur kami panjatkan kehadirat Allah Swt atas segala limpahan rahmat dan hidayahnya sehingga kita semua warga SMP Negeri 5 (SPEMA) masih dapat berbagi, masih terus bekerja cerdas sehingga atas karunianya pula kita masih diberi kesempatan untuk dapat mengerahkan potensi kita dalam dunia Hala madrid",
@@ -34,7 +34,7 @@
     ],
     "news": [
         {
-            "title": "SMP N 5 Mendapat Akreditasi...",
+            "title": "SMPN 5 Akreditasi",
             "category": "Berita Acara",
             "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque ex sed velit maximus facilisis.",
             "image": "images\/Thumbnail Berita.png",
@@ -60,6 +60,13 @@
             "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque ex sed velit maximus facilisis.",
             "image": "images\/Thumbnail Berita.png",
             "link": "#"
+        },
+        {
+            "title": "Test News 2",
+            "category": "berita",
+            "excerpt": "lorem ipsum dolor sit amet napium",
+            "image": "https:\/\/image\/Thumbnail Berita.png",
+            "link": "http:\/\/sa"
         }
     ],
     "about": {
@@ -71,11 +78,11 @@
         },
         "mission": {
             "title": "MISI",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque ex sed velit maximus facilisis. Vivamus condimentum ante a metus condimentum placerat. Nullam quis dui vel elit tincidunt ultrices. Vestibulum congue purus id ex vestibulum, id aliquet ex lobortis. Integer non tortor nibh. Curabitur non luctus massa, a..."
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque ex sed velit maximus facilisis. Vivamus condimentum ante a metus condimentum placerat. Nullam quis dui vel elit tincidunt ultrices. Vestibulum congue purus id ex vestibulum, id aliquet ex lobortis. Integer non tortor nibh. Curabitur non luctus massa,"
         }
     },
     "hero": {
-        "title": "Buat Masa Depan Anak Anda Menyala di SMPN 5 Kota Semarang anjay",
+        "title": "Buat Masa Depan Anak Anda Menyala di SMPN 5 Kota Semarang anjay gg ",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum leo eu aliquet pretium. Lorem ipsum dolor sit amet consectetur adipisicing elit. In, a."
     }
 }
